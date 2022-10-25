@@ -180,6 +180,7 @@ export function PersonalDataForm({
                     currentForm={currentForm}
                     setCurrentForm={setCurrentForm}
                     form={form}
+                    form1={{}}
                 />
             </div>
         </>

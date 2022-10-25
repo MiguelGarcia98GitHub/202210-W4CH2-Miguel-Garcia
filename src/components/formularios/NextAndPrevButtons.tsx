@@ -2,10 +2,12 @@ export function NextAndPrevButtons({
     currentForm,
     setCurrentForm,
     form,
+    form1,
 }: {
     currentForm: number;
     setCurrentForm: any;
     form: any;
+    form1: any;
 }) {
     return (
         <div>
@@ -32,12 +34,23 @@ export function NextAndPrevButtons({
                 type="button"
                 onClick={() => {
                     if (
+                        currentForm === 0 &&
                         form.birthdate.length > 2 &&
                         form.email.length > 2 &&
                         form.gender.length > 2 &&
                         form.lastname.length > 2 &&
                         form.name.length > 2 &&
                         form.newsletter === true
+                    ) {
+                        setCurrentForm(currentForm++);
+                    }
+
+                    if (
+                        currentForm === 1 &&
+                        form1.username.length > 2 &&
+                        form1.password === form1.repeatpassword &&
+                        form1.password > 2 &&
+                        form1.repeatpassword > 2
                     ) {
                         setCurrentForm(currentForm++);
                     }

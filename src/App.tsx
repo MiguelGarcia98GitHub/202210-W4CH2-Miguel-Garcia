@@ -1,6 +1,7 @@
 import { PersonalDataForm } from "./components/formularios/PersonalDataForm";
 import "./App.css";
 import { useState } from "react";
+import { AccessDataForm } from "./components/formularios/AccessDataForm";
 
 function App() {
     const [currentForm, setCurrentForm] = useState(0);
@@ -16,6 +17,15 @@ function App() {
             ) : (
                 ""
             )}
+            {currentForm === 1 ? (
+                <AccessDataForm
+                    currentForm={currentForm}
+                    setCurrentForm={setCurrentForm}
+                />
+            ) : (
+                ""
+            )}
+            {currentForm === 2 ? <div>EN OBRAS</div> : ""}
         </div>
     );
 }
